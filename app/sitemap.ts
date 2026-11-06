@@ -1,0 +1,3 @@
+import type { MetadataRoute } from 'next'
+import { getBackendProducts,getPublishedArticles } from '@/lib/backend-content'
+export default async function sitemap():Promise<MetadataRoute.Sitemap>{const base='https://deyaprecision.com',now=new Date();const staticRoutes=['','/products','/applications','/capabilities','/quality','/about','/news','/contact'];const [products,articles]=await Promise.all([getBackendProducts(),getPublishedArticles()]);return [...staticRoutes.map(route=>({url:`${base}${route}`,lastModified:now})),...products.map(p=>({url:`${base}/products/${p.slug}`,lastModified:now})),...articles.map(a=>({url:`${base}/news/${a.slug}`,lastModified:a.publishedAt?new Date(a.publishedAt):now}))]}

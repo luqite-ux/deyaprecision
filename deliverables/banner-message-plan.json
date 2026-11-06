@@ -1,0 +1,33 @@
+[
+    {
+      "banner_id": "hero-01",
+      "asset": "materials/v0-assets/banner-01.jpg",
+      "message_role": "precision-manufacturing-positioning",
+      "headline": "Precision Components Built Around Your Drawing",
+      "supporting_copy": "CNC turning, milling and process control for demanding liquid-cooling, semiconductor, medical and automation applications.",
+      "evidence_refs": ["customer workbook", "corporate PPT equipment inventory"],
+      "primary_cta_label": "Explore Capabilities",
+      "primary_cta_target": "/capabilities"
+    },
+    {
+      "banner_id": "hero-02",
+      "asset": "materials/v0-assets/banner-02.jpg",
+      "message_role": "product-range-navigation",
+      "headline": "From Manifolds to Sealing and Medical Components",
+      "supporting_copy": "Review documented product families, materials, dimensions and application context before sending your requirement.",
+      "evidence_refs": ["workbook product rows 4–12"],
+      "primary_cta_label": "View Products",
+      "primary_cta_target": "/products"
+    },
+    {
+      "banner_id": "hero-03",
+      "asset": "materials/v0-assets/banner-03.jpg",
+      "message_role": "drawing-to-enquiry",
+      "headline": "A Clear Path from Technical Requirement to Production",
+      "supporting_copy": "Share drawings, materials, quantities and inspection needs for a requirement-specific review.",
+      "evidence_refs": ["workbook FAQ and capability facts"],
+      "primary_cta_label": "Discuss Your Drawing",
+      "primary_cta_target": "/contact"
+    }
+]
+

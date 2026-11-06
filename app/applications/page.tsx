@@ -1,0 +1,4 @@
+import { PageHero } from '@/components/site/page-hero'
+import { getContent } from '@/lib/content'
+import { Icon } from '@/components/site/icon-map'
+export default function ApplicationsPage(){const content=getContent();return <><PageHero eyebrow="Application fit" title="Components organised by buyer use case" description="Customer-supplied examples cover liquid cooling, semiconductor equipment, medical parts and non-standard automation." crumbs={[{label:'Applications'}]} /><main className="container-x grid gap-6 py-16 md:grid-cols-2">{content.applicationSectors.map(s=><section key={s.slug} className="border border-border p-7"><Icon name={s.icon} className="size-7 text-primary"/><h2 className="mt-5 text-2xl font-semibold text-navy">{s.title}</h2><p className="mt-3 text-muted-foreground">{s.intro}</p><ul className="mt-5 space-y-2 text-sm">{s.componentTypes.map(x=><li key={x}>— {x}</li>)}</ul></section>)}</main></>}

@@ -1,0 +1,200 @@
+# v0 build brief — DEYA Precision
+
+Create a complete, premium English B2B enquiry website for **Suzhou Deya Precision Technology Co., Ltd.**, brand **DEYA**, formal domain **deyaprecision.com**. This is the first visual stage; produce real Next.js App Router source, not a screenshot or single landing page. Keep locale-aware data and routing so more languages can be enabled later, but publish English only for the first release.
+
+## Visual direction
+
+Use a precise industrial editorial system derived from the supplied DEYA blue logo: deep navy, clean electric blue accents, cool whites and restrained graphite. Avoid generic neon-tech templates, excessive glow, all-card layouts, oversized empty spaces, heavy rounded corners and decorative UI with no buyer value. Use crisp typography, technical line details and restrained geometric dividers. Product and certificate imagery must remain complete and undistorted.
+
+The customer supplied three finished wide Banner assets. Use **all three** as a full-width homepage carousel; do not replace, omit, regenerate, turn them into framed cards or darken the whole image. Overlay real DOM text in each image’s safe area. Every slide has a different headline, decision task and destination exactly as defined in `banner-message-plan.json`. Desktop and 390px mobile require separate composition/focal decisions; on mobile the copy may move below the image to preserve subjects.
+
+Use `logo.jpg` in header and footer with contain sizing and homepage links. Derive a square favicon from the same verified DEYA symbol; remove all v0/Next.js/template icons.
+
+## Required routes
+
+- Home
+- Products and category-filtered product listing
+- Product detail template with gallery, overview, applications, complete specifications and enquiry CTA
+- Applications / Case Studies
+- Capabilities (manufacturing equipment, inspection equipment and process)
+- Quality / Certifications
+- About Us
+- News and article detail (use an honest empty state; do not invent news)
+- Contact / Request a Quote
+
+Header navigation must explicitly include **Home**. All links pointing to `/news` must be labelled exactly **News**.
+
+## Verified facts
+
+Use the facts and product list in `material-brief.md`. Do not invent customer names, partner logos, project outcomes, export countries, factory ownership claims from Banner imagery, certifications, equipment, prices or commercial promises. The only public contact identity is:
+
+- info@deyaprecision.com
+- +86 189 1408 8662
+- No. 21, Edong Industrial Park, Beiqiao Town, Xiangcheng District, Suzhou, Jiangsu, China
+
+The public legal name is Suzhou Deya Precision Technology Co., Ltd. The footer year must be dynamic and punctuation normalized.
+
+## Product and content rules
+
+Create an extensible data model and UI for all documented product rows and future Supabase content. The images sent to v0 are representative samples, not the full catalogue. Product cards and galleries must use clean continuous backgrounds and `object-fit: contain`; never crop, stretch or cover key geometry. Category cards must link to real, non-empty category destinations.
+
+Applications / Case Studies should organize supplied material into liquid cooling, semiconductor, medical and non-standard automation. Do not call a generic application image a completed customer project. If a case lacks a customer name or measured result, use a neutral component/application title and only supported facts.
+
+Display **each** supplied certificate independently: ISO 9001 English, ISO 9001 Chinese and trademark registration. Use a portrait certificate rail inspired by the supplied Anli certificate component: full document visible, touch/keyboard/manual controls and pause. Never combine certificates into one collage.
+
+Use separate capability sections for production equipment and inspection equipment. Visual cards require semantically related unified line icons or real images, not emoji or repeated generic icons.
+
+## Homepage narrative
+
+Build at least eight meaningful sections excluding header/footer/repeated CTA:
+
+1. Three-slide Banner carousel.
+2. Product family navigation.
+3. Precision manufacturing overview.
+4. Verified production and inspection capability.
+5. Industries / applications served.
+6. Application / case-study preview.
+7. Separate certificate trust rail.
+8. Company identity and concise verified metrics.
+9. Grouped FAQ preview.
+10. Drawing-based enquiry CTA.
+
+The page should lead a technical buyer from fit → product scope → capability → evidence → application context → enquiry, without repeating the same facts in multiple cards.
+
+## Enquiry and accessibility
+
+No prices, cart, checkout or payment. Build realistic contact/RFQ UI and states for later server integration. Fields should support name, company, email, phone/WhatsApp optional, product/application, quantity, material, drawing/file note, message and captcha placeholder. Do not use alert, console.log or setTimeout as a fake success path.
+
+All interactions must work with keyboard and touch, have visible focus, meet WCAG AA contrast and honor `prefers-reduced-motion`. Every major content section must animate when it actually enters the viewport; do not mark unreached sections as completed via a global timeout.
+
+## Hard exclusions
+
+Do not publish or translate warranty, guarantee, 质保 or 保修 claims. Do not publish the QQ email, the conflicting PPT phone number, internal audit notes, source references, confidence language, “B2B” marketing labels, military claims, or invented partners/customers.
+
+
+
+# Suzhou Deya Precision Technology Co., Ltd. — Verified Material Brief
+
+## Identity
+
+- Legal Chinese name: 苏州德亚精密科技有限公司.
+- Official English name supplied in the customer workbook: Suzhou Deya Precision Technology Co., Ltd.
+- Brand: DEYA; source logo is `materials/v0-assets/logo.jpg`.
+- Formal domain: `https://deyaprecision.com`.
+- Formal contact email: `info@deyaprecision.com`.
+- Public phone: `+86 189 1408 8662` (the workbook explicitly labels this as the official public consultation number). The PPT contains a different number and must not override it.
+- Address: No. 21, Edong Industrial Park, Beiqiao Town, Xiangcheng District, Suzhou, Jiangsu, China.
+- Established: 30 July 2020.
+- First release language: English, while retaining locale-aware data and routing for future languages.
+
+## Business and buyer facts
+
+DEYA provides precision-machined components for liquid-cooling systems, semiconductor equipment, medical applications and non-standard automation. The supplied materials support CNC turning, turn-mill machining, vertical machining, process inspection and finished-product inspection. The site is enquiry-led: no prices, cart, checkout or online payment.
+
+Verified operational facts from the workbook:
+
+- Approx. 1,000 m² site, two workshops and two production lines.
+- Indicative monthly capacity around 1,000,000 pieces and daily capacity around 30,000 pieces; order acceptance and lead time remain quotation-dependent.
+- Production equipment includes turning/milling centres and CNC lathes; the PPT contains the detailed equipment inventory.
+- Inspection resources include roughness, profile, dimensional and height measurement equipment; the PPT contains the detailed measurement inventory.
+- ISO 9001 quality management certificate supplied in Chinese and English.
+- Trademark registration certificate No. 88059767, valid from 7 June 2026 to 6 June 2036.
+
+## Product catalogue
+
+Nine source rows must remain traceable and become products or documented variants:
+
+1. Liquid-cooling manifold — stainless steel natural finish, 60 × 40 × 500 mm, MOQ 1.
+2. Manifold connector — stainless steel natural finish, 60 × 100 × 80 mm, MOQ 1.
+3. Extended liquid-cooling manifold — stainless steel natural finish, 60 × 100 × 2500 mm, MOQ 1.
+4. Vacuum sealing flange — stainless steel natural finish, 80 × 65 mm, MOQ 1.
+5. Knife-edge sealing flange — stainless steel natural finish, 120 × 25 mm, MOQ 1.
+6. Wafer flange — hard-anodised natural aluminium, 350 × 35 mm, for 8–12 inch wafer-related processing, MOQ 1.
+7. Titanium alloy valve core — TC4 titanium natural finish, 17 × 17 × 35 mm, medical application, MOQ 1.
+8. Dental surgical tray/component — TC4 titanium natural finish, 80 × 12 × 130 mm, MOQ 1.
+9. Humanoid robot joint component — natural aluminium, 90 × 90 × 220 mm, MOQ 1.
+
+Do not merge products merely because they share a category. The final catalogue may represent the two manifold rows as variants only if the source images, dimensions and product identity remain individually selectable and traceable.
+
+## Content adoption
+
+- Use all three supplied Banner images in the homepage carousel. They are customer-provided visual assets, but public copy must not claim the depicted factory, machinery or scene is a documentary photograph of the customer.
+- Present the ISO 9001 Chinese certificate, ISO 9001 English certificate and trademark registration certificate as separate, individually viewable items. Keep each image complete and legible.
+- Use manufacturing and inspection inventories on a dedicated Capabilities page and in concise homepage proof points.
+- Product/application imagery from PPT pages 10–13 is material for an Applications / Case Studies area. Describe only the demonstrated application category and component type; do not invent customer names, locations, project results or endorsements.
+- No verified partner/customer brand names or logos were supplied. Do not create a partner-logo wall. A neutral “Industries Served” presentation may cover liquid cooling, semiconductor, medical and non-standard automation.
+- News launches with an honest empty state until real articles are published.
+- Videos are registered as not provided and remain disabled.
+
+## Forbidden or unresolved
+
+- Exclude all warranty/guarantee/质保/保修 content. The workbook FAQ answer stating that a quality warranty exists must not be migrated, translated or paraphrased.
+- Do not claim military customers, export markets, named partners, certifications beyond the supplied records, 100% inspection, automatic production, guaranteed capacity, guaranteed lead time or performance life.
+- Do not publish the QQ email or the conflicting PPT phone number.
+- Do not present internal evidence notes, confidence labels, source locations or audit language on public pages.
+
+
+
+# Homepage Media Slot Plan
+
+| Section | Buyer purpose | Media and source | Desktop / 390px treatment | CTA |
+|---|---|---|---|---|
+| Hero carousel 1 | Establish precision-machining positioning | `banner-01.jpg` | Full-bleed; use the existing left negative space for DOM copy. Mobile keeps the right subject visible and may place copy below the image. | Explore capabilities → `/capabilities` |
+| Hero carousel 2 | Show breadth of machining and component supply | `banner-02.jpg` | Full-bleed with copy in the right safe area; no global dark overlay. Recompose on mobile without cropping the manifold/flange subjects. | View products → `/products` |
+| Hero carousel 3 | Connect products to multiple application sectors | `banner-03.jpg` | Full-bleed with left-side copy; preserve all visible component groups on mobile using image focal positioning plus a separate copy panel if required. | Discuss a drawing → `/contact` |
+| Product families | Help buyers select by application and geometry | Representative real product images from the workbook and optimized product folders | Clean light product stage, `object-fit: contain`, consistent backgrounds and complete subjects | Category routes under `/products` |
+| Manufacturing capability | Prove actual production/inspection depth | Real PPT equipment photographs and verified equipment inventory | Editorial split layout, images bleed into section background; no white picture frames | `/capabilities` |
+| Application / case studies | Show supplied components in context without invented outcomes | PPT product/application pages and individual component images | Staggered case cards with complete images and short factual captions | `/applications` |
+| Quality and certificates | Build procurement trust | ISO 9001 EN, ISO 9001 CN and trademark certificate, each separate | Use the Anli certificate rail pattern; full certificate visible, pause/touch/keyboard controls | `/quality` |
+| Company | Establish identity and contactability | Customer-provided company facade visual, logo and verified address | Wide image integrated with text; do not claim it is documentary proof beyond the supplied material | `/about` |
+| FAQ / enquiry | Remove qualification friction and collect drawing-based requirements | No decorative stock media required | Grouped accordion; retain all compliant source answers; mobile uses progressive disclosure | `/contact` |
+
+Video is disabled by default and no video slot is created.
+
+
+
+# Motion Plan
+
+- Hero: restrained cross-fade with manual controls, pause, touch and keyboard support; no autoplay-only access.
+- Product and application cards: use the Anli `original-cards-motion` sequencing pattern, triggered independently when each section enters the viewport.
+- Certificates: use the Anli `original-certificate-motion` rail pattern with full portrait documents, pause, previous/next and touch support.
+- Capability metrics and equipment groups: short staggered reveal tied to the actual viewport; never pre-complete unreached sections with a global timeout.
+- Navigation: hide only after meaningful downward scrolling, reopen on upward scroll/focus, and keep mobile navigation explicit.
+- Reduced motion: disable translation/auto-advance and present static, fully visible content.
+- Performance: transform/opacity only for entrance effects; images retain responsive sizing and no effect may crop product subjects.
+
+
+
+[
+    {
+      "banner_id": "hero-01",
+      "asset": "materials/v0-assets/banner-01.jpg",
+      "message_role": "precision-manufacturing-positioning",
+      "headline": "Precision Components Built Around Your Drawing",
+      "supporting_copy": "CNC turning, milling and process control for demanding liquid-cooling, semiconductor, medical and automation applications.",
+      "evidence_refs": ["customer workbook", "corporate PPT equipment inventory"],
+      "primary_cta_label": "Explore Capabilities",
+      "primary_cta_target": "/capabilities"
+    },
+    {
+      "banner_id": "hero-02",
+      "asset": "materials/v0-assets/banner-02.jpg",
+      "message_role": "product-range-navigation",
+      "headline": "From Manifolds to Sealing and Medical Components",
+      "supporting_copy": "Review documented product families, materials, dimensions and application context before sending your requirement.",
+      "evidence_refs": ["workbook product rows 4–12"],
+      "primary_cta_label": "View Products",
+      "primary_cta_target": "/products"
+    },
+    {
+      "banner_id": "hero-03",
+      "asset": "materials/v0-assets/banner-03.jpg",
+      "message_role": "drawing-to-enquiry",
+      "headline": "A Clear Path from Technical Requirement to Production",
+      "supporting_copy": "Share drawings, materials, quantities and inspection needs for a requirement-specific review.",
+      "evidence_refs": ["workbook FAQ and capability facts"],
+      "primary_cta_label": "Discuss Your Drawing",
+      "primary_cta_target": "/contact"
+    }
+]
+

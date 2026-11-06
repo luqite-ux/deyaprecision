@@ -1,0 +1,20 @@
+{
+  "context": {
+    "projectId": "project-572ace5c-75ed-4d36-80ae-f8ef98f5a741",
+    "runId": "run-d33e9dbc-61e5-4798-8fde-11d991eb365e",
+    "purpose": "build"
+  },
+  "localRequestId": "failed-af9f0558-8cdf-4e67-99db-785ac0b5a199",
+  "request": {
+    "match": "fuzzy",
+    "sort": "relevance",
+    "limit": "10",
+    "query": "precision machining industrial components certificates applications",
+    "industry": "Precision Manufacturing"
+  },
+  "at": "2026-11-06T12:18:30.738Z",
+  "status": 0,
+  "response": {
+    "error": "NETWORK_UNAVAILABLE"
+  }
+}
