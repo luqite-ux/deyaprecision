@@ -45,6 +45,15 @@ test('product details render every mapped customer gallery image', () => {
   assert.doesNotMatch(detail, /const image=product\.gallery\[0\]/)
 })
 
+test('product media fills its clean stage without a nested white frame', () => {
+  const image = read('components/site/product-image.tsx')
+  const detail = read('app/products/[slug]/page.tsx')
+  assert.match(image, /className="object-contain"/)
+  assert.doesNotMatch(image, /className="object-contain p-/)
+  assert.doesNotMatch(detail, /<figure[^>]*className="[^"]*p-5/)
+  assert.match(detail, /<figcaption[^>]*className="[^"]*px-5/)
+})
+
 test('quality page exposes each supplied certificate independently', () => {
   const page = read('app/quality/page.tsx')
   assert.match(page, /content\.certificates/)

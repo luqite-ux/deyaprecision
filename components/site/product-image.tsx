@@ -27,7 +27,7 @@ export function ProductImage({ image, dimensions, sizes, priority, className }: 
           fill
           sizes={sizes}
           priority={priority}
-          className="object-contain p-3"
+          className="object-contain"
         />
       ) : (
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 p-4 text-center">
