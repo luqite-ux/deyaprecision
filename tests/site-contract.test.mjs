@@ -42,3 +42,22 @@ test('news uses the exact public label News and provides an empty state', () => 
   assert.match(read('app/news/page.tsx'), /News/)
   assert.match(read('app/news/page.tsx'), /No published news/i)
 })
+
+test('dynamic detail routes emit database-backed metadata and structured data', () => {
+  const product = read('app/products/[slug]/page.tsx')
+  const article = read('app/news/[slug]/page.tsx')
+  assert.match(product, /generateMetadata/)
+  assert.match(product, /Product/)
+  assert.match(product, /BreadcrumbList/)
+  assert.match(article, /generateMetadata/)
+  assert.match(article, /Article/)
+  assert.match(article, /BreadcrumbList/)
+})
+
+test('captcha is consumed before any inquiry insert', () => {
+  const action = read('app/actions/enquiry.ts')
+  const verifyAt = action.indexOf('verifyCaptchaSubmission')
+  const insertAt = action.indexOf('/rest/v1/inquiries')
+  assert.ok(verifyAt >= 0 && insertAt > verifyAt)
+  assert.match(action, /if \(!captcha\.ok\)/)
+})
