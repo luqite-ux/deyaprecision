@@ -61,3 +61,10 @@ test('captcha is consumed before any inquiry insert', () => {
   assert.ok(verifyAt >= 0 && insertAt > verifyAt)
   assert.match(action, /if \(!captcha\.ok\)/)
 })
+
+test('formal product data has no static product fallback', () => {
+  const backend = read('lib/backend-content.ts')
+  assert.doesNotMatch(backend, /getContent\(\)\.products/)
+  assert.doesNotMatch(backend, /return fallback/)
+  assert.match(backend, /catch\s*\{\s*return \[\]\s*\}/)
+})
