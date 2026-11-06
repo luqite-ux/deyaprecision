@@ -1,4 +1,4 @@
-import type { Product } from '@/data/types'
+import type { IconName, Product, ProductCategory } from '@/data/types'
 
 const url=process.env.NEXT_PUBLIC_SUPABASE_URL?.replace(/\/$/,'')
 const key=process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
@@ -23,6 +23,20 @@ export async function getBackendProducts():Promise<Product[]>{
   }catch{return []}
 }
 export async function getBackendProduct(slug:string){return (await getBackendProducts()).find(p=>p.slug===slug)}
+
+const categoryIcons = new Set<IconName>(['Droplets','Cpu','HeartPulse','Bot','Cog','RotateCw','Drill','Waves','Spline','Ruler','MoveVertical','FileSearch','ClipboardCheck','PackageCheck','Layers','ScanSearch'])
+type CategoryRow={slug:string;name_i18n?:Record<string,string>;name_en?:string;name?:string;description_i18n?:Record<string,string>;description_en?:string;description?:string;icon?:string;extra_data?:{icon?:string;short?:string}}
+export async function getBackendCategories():Promise<ProductCategory[]>{
+  try{
+    const rows=await query<CategoryRow[]>(`product_categories?tenant_id=eq.${tenant}&is_active=eq.true&select=*&order=sort_order.asc`)
+    return rows.map(row=>{
+      const candidate=row.icon||row.extra_data?.icon||'Cog'
+      const icon:IconName=categoryIcons.has(candidate as IconName)?candidate as IconName:'Cog'
+      const description=row.description_i18n?.en||row.description_en||row.description||''
+      return {slug:row.slug,name:row.name_i18n?.en||row.name_en||row.name||row.slug,short:row.extra_data?.short||description,description,icon}
+    })
+  }catch{return []}
+}
 
 export type Article={slug:string;title:string;excerpt:string;content:string;featuredImage?:string;publishedAt?:string}
 type ArticleRow={slug:string;title_i18n?:Record<string,string>;title?:string;excerpt_i18n?:Record<string,string>;excerpt?:string;content_i18n?:Record<string,string>;content?:string;featured_image?:string;published_at?:string}

@@ -9,7 +9,7 @@ import { ProductFamilies } from '@/components/home/product-families'
 import { CtaBand } from '@/components/site/cta-band'
 import { HeroCarousel } from '@/components/site/hero-carousel'
 import { getContent } from '@/lib/content'
-import { getBackendProducts } from '@/lib/backend-content'
+import { getBackendCategories, getBackendProducts } from '@/lib/backend-content'
 import {editableHeroSlides,loadPublicSiteContent} from '@/lib/site-content/home'
 import type {Metadata} from 'next'
 
@@ -18,14 +18,14 @@ export async function generateMetadata():Promise<Metadata>{const snapshot=await 
 export default async function HomePage() {
   const content = getContent()
   const snapshot = await loadPublicSiteContent()
-  const products = await getBackendProducts()
+  const [products,categories] = await Promise.all([getBackendProducts(),getBackendCategories()])
   const { productionEquipment, inspectionEquipment, processSteps, capacityNote } =
     content.capabilities
 
   return (
     <div {...(snapshot?{'data-hq-content-version':snapshot.version}:{})}>
       <HeroCarousel slides={editableHeroSlides(snapshot,content.heroSlides)} />
-      <ProductFamilies categories={content.categories} products={products} />
+      <ProductFamilies categories={categories} products={products} />
       <ProcessOverview steps={processSteps} />
       <CapabilitySplit
         production={productionEquipment}

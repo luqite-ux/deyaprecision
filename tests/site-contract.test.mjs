@@ -68,3 +68,16 @@ test('formal product data has no static product fallback', () => {
   assert.doesNotMatch(backend, /return fallback/)
   assert.match(backend, /catch\s*\{\s*return \[\]\s*\}/)
 })
+
+test('public category navigation comes from the tenant backend', () => {
+  const backend = read('lib/backend-content.ts')
+  const home = read('app/page.tsx')
+  const products = read('app/products/page.tsx')
+
+  assert.match(backend, /export async function getBackendCategories/)
+  assert.match(home, /getBackendCategories/)
+  assert.doesNotMatch(home, /categories=\{content\.categories\}/)
+  assert.match(products, /getBackendCategories/)
+  assert.match(products, /searchParams/)
+  assert.match(products, /category\.name/)
+})

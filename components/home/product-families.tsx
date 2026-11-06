@@ -40,7 +40,7 @@ export function ProductFamilies({ categories, products }: ProductFamiliesProps) 
               <li key={category.slug} className="bg-card">
                 <Reveal delay={index * 90} className="h-full">
                   <Link
-                    href={`/products/category/${category.slug}`}
+                    href={`/products?category=${category.slug}`}
                     className="group flex h-full flex-col transition-colors hover:bg-steel"
                   >
                     <div className="relative aspect-[4/3] w-full bg-white">
