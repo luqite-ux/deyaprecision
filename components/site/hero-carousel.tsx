@@ -7,8 +7,10 @@ import { ArrowRight, ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import type { HeroSlide } from '@/data/types'
+import type { TypographyOverride } from '@/lib/site-content/transport'
 
-export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
+type HeadlineStyle = React.CSSProperties & {'--headline-size-mobile'?:string;'--headline-size-desktop'?:string}
+export function HeroCarousel({ slides, headlineTypography = {} }: { slides: HeroSlide[]; headlineTypography?: Record<string,TypographyOverride> }) {
   const [active, setActive] = useState(0)
   const [playing, setPlaying] = useState(true)
   const [hovering, setHovering] = useState(false)
@@ -70,6 +72,13 @@ export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
         {slides.map((slide, index) => {
           const isActive = index === active
           const right = slide.align === 'right'
+          const typography=headlineTypography[slide.id]
+          const headlineStyle:HeadlineStyle={
+            ...(typography?.fontFamily==='site-sans'?{fontFamily:'var(--font-sans)'}:{}),
+            ...(typography?.fontWeight?{fontWeight:typography.fontWeight}:{}),
+            ...(typography?.fontSizeMobile?{'--headline-size-mobile':`${typography.fontSizeMobile}px`}:{}),
+            ...(typography?.fontSizeDesktop?{'--headline-size-desktop':`${typography.fontSizeDesktop}px`}:{}),
+          }
           return (
             <article
               key={slide.id}
@@ -109,7 +118,7 @@ export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
                     <span aria-hidden="true" className="h-px w-8 bg-signal" />
                     {slide.eyebrow}
                   </p>
-                  <h2 className="mt-4 text-balance text-2xl font-semibold leading-[1.12] tracking-tight text-white sm:text-3xl lg:text-[clamp(1.5rem,2.6vw,3.25rem)]">
+                  <h2 style={headlineStyle} className="hero-editable-headline mt-4 text-balance font-semibold leading-[1.12] tracking-tight text-white">
                     {slide.headline}
                   </h2>
                   <p className="mt-4 text-pretty text-sm leading-relaxed text-white/85 sm:text-base lg:text-[clamp(0.875rem,1.1vw,1.125rem)]">

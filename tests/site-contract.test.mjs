@@ -81,3 +81,15 @@ test('public category navigation comes from the tenant backend', () => {
   assert.match(products, /searchParams/)
   assert.match(products, /category\.name/)
 })
+
+test('published hero typography overrides reach the rendered headline', () => {
+  const transport = read('lib/site-content/transport.ts')
+  const homeContent = read('lib/site-content/home.ts')
+  const page = read('app/page.tsx')
+  const hero = read('components/site/hero-carousel.tsx')
+
+  assert.match(transport, /styles\??:/)
+  assert.match(homeContent, /editableHeroTypography/)
+  assert.match(page, /headlineTypography=/)
+  for (const token of ['fontSizeDesktop', 'fontSizeMobile', 'fontWeight', 'fontFamily']) assert.match(hero, new RegExp(token))
+})

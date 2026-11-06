@@ -10,7 +10,7 @@ import { CtaBand } from '@/components/site/cta-band'
 import { HeroCarousel } from '@/components/site/hero-carousel'
 import { getContent } from '@/lib/content'
 import { getBackendCategories, getBackendProducts } from '@/lib/backend-content'
-import {editableHeroSlides,loadPublicSiteContent} from '@/lib/site-content/home'
+import {editableHeroSlides,editableHeroTypography,loadPublicSiteContent} from '@/lib/site-content/home'
 import type {Metadata} from 'next'
 
 export const revalidate = 60
@@ -24,7 +24,7 @@ export default async function HomePage() {
 
   return (
     <div {...(snapshot?{'data-hq-content-version':snapshot.version}:{})}>
-      <HeroCarousel slides={editableHeroSlides(snapshot,content.heroSlides)} />
+      <HeroCarousel slides={editableHeroSlides(snapshot,content.heroSlides)} headlineTypography={editableHeroTypography(snapshot)} />
       <ProductFamilies categories={categories} products={products} />
       <ProcessOverview steps={processSteps} />
       <CapabilitySplit

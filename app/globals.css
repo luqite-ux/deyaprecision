@@ -90,6 +90,18 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+.hero-editable-headline {
+  font-size: var(--headline-size-mobile, 1.5rem);
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .hero-editable-headline { font-size: var(--headline-size-mobile, 1.875rem); }
+}
+
+@media (min-width: 1024px) {
+  .hero-editable-headline { font-size: var(--headline-size-desktop, clamp(1.5rem, 2.6vw, 3.25rem)); }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
