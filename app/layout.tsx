@@ -3,6 +3,7 @@ import { IBM_Plex_Sans, IBM_Plex_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { SiteHeader } from '@/components/site/site-header'
 import { SiteFooter } from '@/components/site/site-footer'
+import { ViewportRevealController } from '@/components/site/viewport-reveal-controller'
 import { defaultLocale } from '@/lib/i18n'
 import {cookies} from 'next/headers'
 import {nav} from '@/data/en/site'
@@ -76,6 +77,7 @@ export default async function RootLayout({
         {preview?<aside className="bg-amber-100 px-4 py-2 text-center text-sm text-amber-950">Preview mode · changes are not public <form action="/api/site-content/exit-preview" method="post" className="ml-3 inline"><button type="submit" className="underline">Exit preview</button></form></aside>:null}
         <SiteHeader items={editableNavigation(snapshot,nav)} />
         <main id="main">{children}</main>
+        <ViewportRevealController />
         <SiteFooter />
         {process.env.NODE_ENV === 'production' && !preview && <Analytics />}
       </body>

@@ -20,6 +20,19 @@ test('all planned public routes exist as App Router pages', () => {
   ]) assert.ok(read(file).includes('export default'), `${file} must export a page`)
 })
 
+test('all public main sections use viewport lifecycle reveals without timeout completion', () => {
+  const layout = read('app/layout.tsx')
+  const controller = read('components/site/viewport-reveal-controller.tsx')
+  const css = read('app/globals.css')
+  assert.match(layout, /<ViewportRevealController\s*\/>/)
+  assert.match(controller, /new IntersectionObserver/)
+  assert.match(controller, /main section/)
+  assert.match(controller, /data-viewport-reveal/)
+  assert.doesNotMatch(controller, /setTimeout\s*\(/)
+  assert.match(css, /\[data-viewport-reveal=['"]pending['"]\]/)
+  assert.match(css, /prefers-reduced-motion:\s*reduce/)
+})
+
 test('product details render every supplied specification field', () => {
   const page = read('app/products/[slug]/page.tsx')
   assert.match(page, /product\.specifications/)
