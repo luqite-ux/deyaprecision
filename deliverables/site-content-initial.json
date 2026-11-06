@@ -1,0 +1,13 @@
+{
+  "pages": {"home": {"order": ["navigation", "hero", "seo"], "modules": {
+    "navigation": {"hidden": false, "values": {"items": [
+      {"id":"nav-home","label":"Home","href":"/"},{"id":"nav-products","label":"Products","href":"/products"},{"id":"nav-applications","label":"Applications","href":"/applications"},{"id":"nav-capabilities","label":"Capabilities","href":"/capabilities"},{"id":"nav-quality","label":"Quality","href":"/quality"},{"id":"nav-about","label":"About Us","href":"/about"},{"id":"nav-news","label":"News","href":"/news"},{"id":"nav-contact","label":"Contact","href":"/contact"}
+    ]}},
+    "hero": {"hidden": false, "values": {"slides": [
+      {"id":"hero-01","eyebrow":"Precision manufacturing","headline":"Precision Components Built Around Your Drawing","supporting":"CNC turning, milling and process control for demanding liquid-cooling, semiconductor, medical and automation applications.","cta_label":"Explore Capabilities","cta_href":"/capabilities"},
+      {"id":"hero-02","eyebrow":"Product range","headline":"From Manifolds to Sealing and Medical Components","supporting":"Review documented product families, materials, dimensions and application context before sending your requirement.","cta_label":"View Products","cta_href":"/products"},
+      {"id":"hero-03","eyebrow":"Drawing to enquiry","headline":"A Clear Path from Technical Requirement to Production","supporting":"Share drawings, materials, quantities and inspection needs for a requirement-specific review.","cta_label":"Discuss Your Drawing","cta_href":"/contact"}
+    ]}},
+    "seo": {"hidden": false, "values": {"title":"DEYA Precision | Precision-Machined Components, Suzhou","description":"Suzhou Deya Precision Technology Co., Ltd. machines precision components for liquid-cooling systems, semiconductor equipment, medical applications and non-standard automation."}}
+  }}}
+}

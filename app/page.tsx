@@ -10,17 +10,21 @@ import { CtaBand } from '@/components/site/cta-band'
 import { HeroCarousel } from '@/components/site/hero-carousel'
 import { getContent } from '@/lib/content'
 import { getBackendProducts } from '@/lib/backend-content'
+import {editableHeroSlides,loadPublicSiteContent} from '@/lib/site-content/home'
+import type {Metadata} from 'next'
 
 export const revalidate = 60
+export async function generateMetadata():Promise<Metadata>{const snapshot=await loadPublicSiteContent();const seo=snapshot?.pages.find((page)=>page.path==='/')?.modules.find((module)=>module.type==='seo')?.values;return{...(typeof seo?.title==='string'?{title:seo.title}:{}),...(typeof seo?.description==='string'?{description:seo.description}:{}),alternates:{canonical:'https://deyaprecision.com/'}}}
 export default async function HomePage() {
   const content = getContent()
+  const snapshot = await loadPublicSiteContent()
   const products = await getBackendProducts()
   const { productionEquipment, inspectionEquipment, processSteps, capacityNote } =
     content.capabilities
 
   return (
-    <>
-      <HeroCarousel slides={content.heroSlides} />
+    <div {...(snapshot?{'data-hq-content-version':snapshot.version}:{})}>
+      <HeroCarousel slides={editableHeroSlides(snapshot,content.heroSlides)} />
       <ProductFamilies categories={content.categories} products={products} />
       <ProcessOverview steps={processSteps} />
       <CapabilitySplit
@@ -34,6 +38,6 @@ export default async function HomePage() {
       <CompanySection />
       <FaqSection groups={content.faqGroups} />
       <CtaBand />
-    </>
+    </div>
   )
 }

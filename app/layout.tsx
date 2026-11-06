@@ -4,6 +4,10 @@ import { Analytics } from '@vercel/analytics/next'
 import { SiteHeader } from '@/components/site/site-header'
 import { SiteFooter } from '@/components/site/site-footer'
 import { defaultLocale } from '@/lib/i18n'
+import {cookies} from 'next/headers'
+import {nav} from '@/data/en/site'
+import {editableNavigation,loadPublicSiteContent} from '@/lib/site-content/home'
+import {PREVIEW_COOKIE} from '@/lib/site-content/site-content'
 import './globals.css'
 
 const plexSans = IBM_Plex_Sans({
@@ -51,11 +55,13 @@ export const viewport: Viewport = {
   initialScale: 1,
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const snapshot=await loadPublicSiteContent()
+  const preview=(await cookies()).has(PREVIEW_COOKIE)
   return (
     <html lang={defaultLocale} className={`${plexSans.variable} ${plexMono.variable}`}>
       <body className="font-sans antialiased">
@@ -67,10 +73,11 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        <SiteHeader />
+        {preview?<aside className="bg-amber-100 px-4 py-2 text-center text-sm text-amber-950">Preview mode · changes are not public <form action="/api/site-content/exit-preview" method="post" className="ml-3 inline"><button type="submit" className="underline">Exit preview</button></form></aside>:null}
+        <SiteHeader items={editableNavigation(snapshot,nav)} />
         <main id="main">{children}</main>
         <SiteFooter />
-        {process.env.NODE_ENV === 'production' && <Analytics />}
+        {process.env.NODE_ENV === 'production' && !preview && <Analytics />}
       </body>
     </html>
   )

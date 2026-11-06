@@ -21,7 +21,7 @@ function isActive(pathname: string, href: string) {
   return href === '/' ? pathname === '/' : pathname === href || pathname.startsWith(`${href}/`)
 }
 
-export function SiteHeader() {
+export function SiteHeader({items=nav}:{items?:readonly {label:string;href:string}[]}) {
   const pathname = usePathname()
   const [hidden, setHidden] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
@@ -69,7 +69,7 @@ export function SiteHeader() {
 
         <nav aria-label="Primary" className="hidden xl:block">
           <ul className="flex items-center gap-1">
-            {nav.map((item) => {
+            {items.map((item) => {
               const active = isActive(pathname, item.href)
               return (
                 <li key={item.href}>
@@ -114,7 +114,7 @@ export function SiteHeader() {
               </div>
               <nav aria-label="Mobile" className="flex-1 overflow-y-auto p-3">
                 <ul>
-                  {nav.map((item) => {
+                  {items.map((item) => {
                     const active = isActive(pathname, item.href)
                     return (
                       <li key={item.href}>
