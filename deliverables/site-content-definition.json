@@ -1,12 +1,12 @@
 {
-  "version": 1,
+  "version": 2,
   "fontFamilies": [{"key": "site-sans", "label": "Website default font"}],
   "pages": [{
     "key": "home", "path": "/", "label": "Home",
     "modules": [
       {"key": "navigation", "type": "navigation", "label": "Primary navigation", "canHide": false, "canReorder": false, "fields": [{"key": "items", "type": "repeat", "label": "Navigation items", "maxItems": 10, "fields": [{"key": "label", "type": "text", "label": "Label", "required": true, "maxLength": 40}, {"key": "href", "type": "link", "label": "Path", "required": true}]}]},
       {"key": "hero", "type": "hero", "label": "Homepage banners", "canHide": false, "canReorder": false, "fields": [{"key": "slides", "type": "repeat", "label": "Banner text", "maxItems": 3, "fields": [{"key": "eyebrow", "type": "text", "label": "Eyebrow", "required": true, "maxLength": 60}, {"key": "headline", "type": "text", "label": "Headline", "required": true, "maxLength": 100, "typography": {"fontFamilies": ["site-sans"], "fontWeights": [500,600,700], "fontSize": {"min": 22, "max": 56}, "defaults": {"fontFamily": "site-sans", "fontWeight": 600, "fontSizeDesktop": 48, "fontSizeMobile": 30}}}, {"key": "supporting", "type": "textarea", "label": "Supporting text", "required": true, "maxLength": 240}, {"key": "cta_label", "type": "text", "label": "CTA label", "required": true, "maxLength": 40}, {"key": "cta_href", "type": "link", "label": "CTA path", "required": true}]}]},
-      {"key": "seo", "type": "seo", "label": "Homepage SEO", "canHide": false, "canReorder": false, "fields": [{"key": "title", "type": "text", "label": "SEO title", "required": true, "maxLength": 70}, {"key": "description", "type": "textarea", "label": "SEO description", "required": true, "maxLength": 180}]}
+      {"key": "seo", "type": "seo", "label": "Homepage SEO", "canHide": false, "canReorder": false, "fields": [{"key": "title", "type": "text", "label": "SEO title", "localized": true, "required": true, "maxLength": 70}, {"key": "description", "type": "textarea", "label": "SEO description", "localized": true, "required": true, "maxLength": 180}]}
     ]
   }]
 }

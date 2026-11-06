@@ -8,6 +8,6 @@
       {"id":"hero-02","eyebrow":"Product range","headline":"From Manifolds to Sealing and Medical Components","supporting":"Review documented product families, materials, dimensions and application context before sending your requirement.","cta_label":"View Products","cta_href":"/products"},
       {"id":"hero-03","eyebrow":"Drawing to enquiry","headline":"A Clear Path from Technical Requirement to Production","supporting":"Share drawings, materials, quantities and inspection needs for a requirement-specific review.","cta_label":"Discuss Your Drawing","cta_href":"/contact"}
     ]}},
-    "seo": {"hidden": false, "values": {"title":"DEYA Precision | Precision-Machined Components, Suzhou","description":"Suzhou Deya Precision Technology Co., Ltd. machines precision components for liquid-cooling systems, semiconductor equipment, medical applications and non-standard automation."}}
+    "seo": {"hidden": false, "values": {"title":{"en":"DEYA Precision | Precision-Machined Components, Suzhou"},"description":{"en":"Suzhou Deya Precision Technology Co., Ltd. machines precision components for liquid-cooling systems, semiconductor equipment, medical applications and non-standard automation."}}}
   }}}
 }
