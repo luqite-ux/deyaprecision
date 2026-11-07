@@ -70,9 +70,9 @@ const inspectionEquipment: EquipmentItem[] = [
   },
 ]
 
-function EquipmentGrid({ items }: { items: EquipmentItem[] }) {
+function EquipmentGrid({ items, columns = 3 }: { items: EquipmentItem[]; columns?: 2 | 3 }) {
   return (
-    <div className="mt-10 grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
+    <div className={`mt-10 grid gap-px border border-border bg-border sm:grid-cols-2 ${columns === 3 ? 'lg:grid-cols-3' : 'lg:grid-cols-2'}`}>
       {items.map((item, index) => (
         <Reveal key={`${item.name}-${item.model ?? index}`} delay={index * 70} className="bg-card">
           <article className="h-full">
@@ -116,7 +116,7 @@ export function EquipmentGallery() {
             title="Measurement resources for process and final checks"
             description="Inspection resources used for dimensional, profile, surface-finish and height measurement against drawing requirements."
           />
-          <EquipmentGrid items={inspectionEquipment} />
+          <EquipmentGrid items={inspectionEquipment} columns={2} />
         </div>
       </div>
     </section>
