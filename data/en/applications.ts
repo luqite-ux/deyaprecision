@@ -16,7 +16,7 @@ export const applicationSectors: ApplicationSector[] = [
           'Machined stainless steel manifold bodies with tapped bosses, shown as a representative sample batch.',
         productSlug: 'liquid-cooling-manifold',
         image: {
-          src: '/images/products/stainless-bar-manifold.jpg',
+          src: '/images/products/liquid-cooling-family-white-bg-ai.png',
           alt: 'Row of machined stainless steel bars, each with flanged threaded bosses along its length',
         },
       },
