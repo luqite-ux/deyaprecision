@@ -51,7 +51,7 @@ export const products: Product[] = [
     applications: ['Liquid-cooling systems'],
     gallery: [
       {
-        src: '/images/products/liquid-cooling-manifold-500mm.jpg',
+        src: '/images/products/liquid-cooling-family-white-bg-ai.png',
         alt: 'Row of machined stainless steel bars, each with flanged threaded bosses along its length',
         note: '500 mm source variant',
       },
