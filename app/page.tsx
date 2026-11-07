@@ -4,6 +4,7 @@ import { CertificatesSection } from '@/components/home/certificates-section'
 import { CompanySection } from '@/components/home/company-section'
 import { FaqSection } from '@/components/home/faq-section'
 import { Industries } from '@/components/home/industries'
+import { InspectionEquipmentPreview } from '@/components/home/inspection-equipment-preview'
 import { ProcessOverview } from '@/components/home/process-overview'
 import { ProductFamilies } from '@/components/home/product-families'
 import { CtaBand } from '@/components/site/cta-band'
@@ -32,6 +33,7 @@ export default async function HomePage() {
         inspection={inspectionEquipment}
         capacityNote={capacityNote}
       />
+      <InspectionEquipmentPreview />
       <Industries sectors={content.applicationSectors} />
       <ApplicationPreview sectors={content.applicationSectors} />
       <CertificatesSection certificates={content.certificates} />

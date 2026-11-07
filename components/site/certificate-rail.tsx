@@ -84,7 +84,11 @@ export function CertificateRail({ certificates }: { certificates: Certificate[] 
                       alt={certificate.alt}
                       fill
                       sizes="(min-width: 1024px) 24vw, 72vw"
-                      className="object-contain p-2"
+                      className={
+                        certificate.id === 'trademark-88059767'
+                          ? 'scale-[1.17] object-contain'
+                          : 'object-contain p-2'
+                      }
                     />
                     <span className="absolute right-2 top-2 flex size-8 items-center justify-center bg-navy text-white opacity-90 transition-opacity group-hover:opacity-100">
                       <Maximize2 aria-hidden="true" className="size-4" />
@@ -98,13 +102,17 @@ export function CertificateRail({ certificates }: { certificates: Certificate[] 
                   <DialogDescription className="sr-only">
                     Full view of the {certificate.kind.toLowerCase()}.
                   </DialogDescription>
-                  <div className="relative mx-auto aspect-[3/4] w-full max-w-[34rem] bg-white">
+                  <div className="relative mx-auto aspect-[3/4] w-full max-w-[34rem] overflow-hidden bg-white">
                     <Image
                       src={certificate.image}
                       alt={certificate.alt}
                       fill
                       sizes="(min-width: 768px) 34rem, 90vw"
-                      className="object-contain"
+                      className={
+                        certificate.id === 'trademark-88059767'
+                          ? 'scale-[1.17] object-contain'
+                          : 'object-contain'
+                      }
                     />
                   </div>
                 </DialogContent>

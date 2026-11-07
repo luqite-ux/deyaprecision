@@ -23,9 +23,6 @@ export function SiteFooter() {
             </span>
           </Link>
           <p className="mt-6 max-w-xs text-sm leading-relaxed text-white/75">{site.tagline}</p>
-          <p className="mt-4 text-sm text-white/75">
-            <span lang="zh-CN">{site.legalNameZh}</span>
-          </p>
         </div>
 
         <nav aria-label="Footer">
