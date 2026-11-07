@@ -84,11 +84,7 @@ export function CertificateRail({ certificates }: { certificates: Certificate[] 
                       alt={certificate.alt}
                       fill
                       sizes="(min-width: 1024px) 24vw, 72vw"
-                      className={
-                        certificate.id === 'trademark-88059767'
-                          ? 'scale-[1.17] object-contain'
-                          : 'object-contain p-2'
-                      }
+                      className="object-contain p-2"
                     />
                     <span className="absolute right-2 top-2 flex size-8 items-center justify-center bg-navy text-white opacity-90 transition-opacity group-hover:opacity-100">
                       <Maximize2 aria-hidden="true" className="size-4" />
@@ -108,11 +104,7 @@ export function CertificateRail({ certificates }: { certificates: Certificate[] 
                       alt={certificate.alt}
                       fill
                       sizes="(min-width: 768px) 34rem, 90vw"
-                      className={
-                        certificate.id === 'trademark-88059767'
-                          ? 'scale-[1.17] object-contain'
-                          : 'object-contain'
-                      }
+                      className="object-contain"
                     />
                   </div>
                 </DialogContent>
