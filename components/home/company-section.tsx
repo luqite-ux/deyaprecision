@@ -44,9 +44,17 @@ export function CompanySection() {
             </div>
           </Reveal>
 
-          <dl className="mt-10 grid grid-cols-2 gap-px border border-border bg-border sm:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4">
+          <dl className="mt-10 grid grid-cols-2 gap-px border border-border bg-border sm:grid-cols-6">
             {metrics.map((metric, index) => (
-              <Reveal key={metric.label} delay={index * 80} className="bg-card p-5">
+              <Reveal
+                key={metric.label}
+                delay={index * 80}
+                className={`bg-card p-5 ${
+                  index < 3
+                    ? 'sm:col-span-2'
+                    : `sm:col-span-3 ${index === metrics.length - 1 ? 'col-span-2' : ''}`
+                }`}
+              >
                 <dd className="font-mono text-xl font-medium text-navy sm:text-2xl">{metric.value}</dd>
                 <dt className="mt-1 text-xs text-muted-foreground">{metric.label}</dt>
               </Reveal>
