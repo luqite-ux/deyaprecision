@@ -24,7 +24,7 @@ export const applicationSectors: ApplicationSector[] = [
         title: 'Long-format manifold',
         componentType: 'Extended manifold, 60 × 100 × 2500 mm',
         detail: 'A long-format stainless steel manifold documented at 2,500 mm overall length.',
-        productSlug: 'liquid-cooling-manifold',
+        productSlug: 'extended-liquid-cooling-manifold',
       },
     ],
   },

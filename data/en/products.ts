@@ -40,14 +40,14 @@ export const products: Product[] = [
     slug: 'liquid-cooling-manifold',
     name: 'Liquid-Cooling Manifold',
     categorySlug: 'liquid-cooling',
-    summary: 'Stainless steel manifold body with 500 mm and 2500 mm source variants.',
+    summary: 'Stainless steel manifold body, 60 × 40 × 500 mm.',
     overview:
-      'A machined stainless steel manifold in natural finish. The supplied workbook documents a 60 × 40 × 500 mm version and a 60 × 100 × 2500 mm long-format version. Port positions, threads and sealing details follow your drawing, so share them with your enquiry.',
+      'A machined stainless steel manifold in natural finish, documented at 60 × 40 × 500 mm for liquid-cooling assemblies. Port positions, threads and sealing details follow your drawing, so share them with your enquiry.',
     material: 'Stainless steel',
     finish: 'Natural finish',
-    dimensions: '60 × 40 × 500 mm / 60 × 100 × 2500 mm',
+    dimensions: '60 × 40 × 500 mm',
     moq: '1 piece',
-    specifications: { Material: 'Stainless steel', Finish: 'Natural finish', 'Variant A': '60 × 40 × 500 mm', 'Variant B': '60 × 100 × 2500 mm', MOQ: '1 piece' },
+    specifications: { Material: 'Stainless steel', Finish: 'Natural finish', Dimensions: '60 × 40 × 500 mm', MOQ: '1 piece' },
     applications: ['Liquid-cooling systems'],
     gallery: [
       {
@@ -55,14 +55,9 @@ export const products: Product[] = [
         alt: 'Row of machined stainless steel bars, each with flanged threaded bosses along its length',
         note: '500 mm source variant',
       },
-      {
-        src: '/images/products/liquid-cooling-manifold-2500mm.jpg',
-        alt: 'Long-format machined stainless steel liquid-cooling manifold supplied by the customer',
-        note: '2500 mm source variant',
-      },
     ],
     sourceRow: 4,
-    relatedSlugs: ['manifold-connector'],
+    relatedSlugs: ['manifold-connector', 'extended-liquid-cooling-manifold'],
   },
   {
     slug: 'manifold-connector',
@@ -79,7 +74,30 @@ export const products: Product[] = [
     applications: ['Liquid-cooling systems'],
     gallery: [{ src: '/images/products/manifold-connector.jpg', alt: 'Machined stainless steel manifold connector supplied by the customer', note: 'Customer-supplied product image' }],
     sourceRow: 5,
-    relatedSlugs: ['liquid-cooling-manifold'],
+    relatedSlugs: ['liquid-cooling-manifold', 'extended-liquid-cooling-manifold'],
+  },
+  {
+    slug: 'extended-liquid-cooling-manifold',
+    name: 'Extended Liquid-Cooling Manifold',
+    categorySlug: 'liquid-cooling',
+    summary: 'Long-format stainless steel manifold, 60 × 100 × 2500 mm.',
+    overview:
+      'A long-format machined stainless steel manifold in natural finish, documented at 60 × 100 × 2500 mm for liquid-cooling assemblies. Port positions, threads, support points and sealing details follow your drawing.',
+    material: 'Stainless steel',
+    finish: 'Natural finish',
+    dimensions: '60 × 100 × 2500 mm',
+    moq: '1 piece',
+    specifications: { Material: 'Stainless steel', Finish: 'Natural finish', Dimensions: '60 × 100 × 2500 mm', MOQ: '1 piece' },
+    applications: ['Liquid-cooling systems'],
+    gallery: [
+      {
+        src: '/images/products/liquid-cooling-manifold-2500mm.jpg',
+        alt: 'Long-format machined stainless steel liquid-cooling manifold supplied by the customer',
+        note: 'Customer-supplied product image',
+      },
+    ],
+    sourceRow: 6,
+    relatedSlugs: ['liquid-cooling-manifold', 'manifold-connector'],
   },
   {
     slug: 'vacuum-sealing-flange',

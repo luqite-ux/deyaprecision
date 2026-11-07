@@ -11,6 +11,25 @@ type ProductFamiliesProps = {
   products: Product[]
 }
 
+const familyVisuals: Record<string, { src: string; alt: string }> = {
+  'liquid-cooling': {
+    src: '/images/products/liquid-cooling-family-white-bg-ai.png',
+    alt: 'Stainless steel liquid-cooling manifold bodies arranged on a clean white background',
+  },
+  'semiconductor-vacuum': {
+    src: '/images/products/sealing-flange.jpg',
+    alt: 'Machined stainless steel vacuum sealing flanges',
+  },
+  medical: {
+    src: '/images/products/titanium-alloy-valve-core.jpg',
+    alt: 'TC4 titanium alloy valve cores for medical applications',
+  },
+  'automation-robotics': {
+    src: '/images/products/robot-joint-no-hand-ai.png',
+    alt: 'Machined aluminium humanoid robot joint housing on a clean white background',
+  },
+}
+
 export function ProductFamilies({ categories, products }: ProductFamiliesProps) {
   return (
     <section aria-labelledby="families-heading" className="py-16 sm:py-24">
@@ -35,7 +54,7 @@ export function ProductFamilies({ categories, products }: ProductFamiliesProps) 
         <ul role="list" className="mt-12 grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
           {categories.map((category, index) => {
             const inCategory = products.filter((p) => p.categorySlug === category.slug)
-            const image = inCategory.find((p) => p.gallery.length > 0)?.gallery[0]
+            const image = familyVisuals[category.slug] ?? inCategory.find((p) => p.gallery.length > 0)?.gallery[0]
             return (
               <li key={category.slug} className="bg-card">
                 <Reveal delay={index * 90} className="h-full">
@@ -43,14 +62,14 @@ export function ProductFamilies({ categories, products }: ProductFamiliesProps) 
                     href={`/products?category=${category.slug}`}
                     className="group flex h-full flex-col transition-colors hover:bg-steel"
                   >
-                    <div className="relative aspect-[4/3] w-full bg-white">
+                    <div className="relative aspect-[4/3] w-full overflow-hidden bg-white">
                       {image ? (
                         <Image
                           src={image.src}
                           alt={image.alt}
                           fill
                           sizes="(min-width: 1024px) 22vw, (min-width: 640px) 45vw, 92vw"
-                          className="object-contain p-4"
+                          className="object-contain"
                         />
                       ) : null}
                     </div>
