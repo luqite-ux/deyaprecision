@@ -4,6 +4,13 @@ import { ProductImage } from '@/components/site/product-image'
 import type { Product } from '@/data/types'
 
 export function ProductCard({ product }: { product: Product }) {
+  const fillImage = [
+    'liquid-cooling-manifold',
+    'manifold-connector',
+    'extended-liquid-cooling-manifold',
+    'humanoid-robot-joint-component',
+  ].includes(product.slug)
+
   return (
     <Link
       href={`/products/${product.slug}`}
@@ -14,6 +21,7 @@ export function ProductCard({ product }: { product: Product }) {
           image={product.gallery[0]}
           dimensions={product.dimensions}
           sizes="(min-width: 1024px) 28vw, (min-width: 640px) 45vw, 92vw"
+          imageClassName={fillImage ? 'object-cover scale-[1.03]' : undefined}
         />
       </div>
       <div className="flex flex-1 flex-col p-5">

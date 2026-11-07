@@ -9,9 +9,10 @@ type ProductImageProps = {
   sizes: string
   priority?: boolean
   className?: string
+  imageClassName?: string
 }
 
-export function ProductImage({ image, dimensions, sizes, priority, className }: ProductImageProps) {
+export function ProductImage({ image, dimensions, sizes, priority, className, imageClassName }: ProductImageProps) {
   return (
     <div
       className={cn(
@@ -27,7 +28,7 @@ export function ProductImage({ image, dimensions, sizes, priority, className }: 
           fill
           sizes={sizes}
           priority={priority}
-          className="object-contain"
+          className={cn('object-contain', imageClassName)}
         />
       ) : (
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 p-4 text-center">
