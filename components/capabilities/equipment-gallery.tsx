@@ -76,13 +76,13 @@ function EquipmentGrid({ items }: { items: EquipmentItem[] }) {
       {items.map((item, index) => (
         <Reveal key={`${item.name}-${item.model ?? index}`} delay={index * 70} className="bg-card">
           <article className="h-full">
-            <div className="relative aspect-[4/3] overflow-hidden bg-white">
+            <div className="relative aspect-[4/3] overflow-hidden bg-steel">
               <Image
                 src={item.image}
                 alt={`${item.model ? `${item.model} ` : ''}${item.name} at Suzhou Deya Precision`}
                 fill
                 sizes="(min-width: 1024px) 31vw, (min-width: 640px) 47vw, 92vw"
-                className="object-contain"
+                className="object-cover transition-transform duration-500 hover:scale-[1.025]"
               />
             </div>
             <div className="border-t border-border p-5 sm:p-6">

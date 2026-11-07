@@ -3,9 +3,9 @@ import { Reveal } from '@/components/site/reveal'
 import { SectionHeading } from '@/components/site/section-heading'
 import type { CapabilityItem } from '@/data/types'
 
-export function ProcessOverview({ steps }: { steps: CapabilityItem[] }) {
+export function ProcessOverview({ steps, compact = false }: { steps: CapabilityItem[]; compact?: boolean }) {
   return (
-    <section aria-labelledby="process-heading" className="on-dark blueprint bg-navy-deep py-16 text-white sm:py-24">
+    <section aria-labelledby="process-heading" className={`on-dark blueprint bg-navy-deep text-white ${compact ? 'pb-14 pt-8 sm:pb-16 sm:pt-10' : 'py-16 sm:py-24'}`}>
       <div className="container-x">
         <Reveal>
           <div id="process-heading">
@@ -18,7 +18,7 @@ export function ProcessOverview({ steps }: { steps: CapabilityItem[] }) {
           </div>
         </Reveal>
 
-        <ol className="relative mt-14 grid gap-10 md:grid-cols-2 lg:grid-cols-4 lg:gap-0">
+        <ol className={`relative grid gap-10 md:grid-cols-2 lg:grid-cols-4 lg:gap-0 ${compact ? 'mt-10' : 'mt-14'}`}>
           <span
             aria-hidden="true"
             className="absolute left-0 right-0 top-6 hidden h-px bg-white/25 lg:block"

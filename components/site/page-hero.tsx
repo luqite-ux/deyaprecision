@@ -9,14 +9,15 @@ type PageHeroProps = {
   description?: string
   crumbs?: Crumb[]
   children?: React.ReactNode
+  compact?: boolean
 }
 
-export function PageHero({ eyebrow, title, description, crumbs, children }: PageHeroProps) {
+export function PageHero({ eyebrow, title, description, crumbs, children, compact = false }: PageHeroProps) {
   return (
     <section className="on-dark blueprint bg-navy-deep text-white">
-      <div className="container-x py-12 sm:py-16">
+      <div className={`container-x ${compact ? 'py-8 sm:py-10' : 'py-12 sm:py-16'}`}>
         {crumbs && crumbs.length > 0 ? (
-          <nav aria-label="Breadcrumb" className="mb-8">
+          <nav aria-label="Breadcrumb" className={compact ? 'mb-5' : 'mb-8'}>
             <ol className="flex flex-wrap items-center gap-1.5 text-xs text-white/75">
               <li>
                 <Link href="/" className="hover:text-white hover:underline">
@@ -44,7 +45,7 @@ export function PageHero({ eyebrow, title, description, crumbs, children }: Page
           <span aria-hidden="true" className="h-px w-8 bg-signal" />
           {eyebrow}
         </p>
-        <h1 className="mt-4 max-w-3xl text-balance text-3xl font-semibold leading-tight tracking-tight sm:text-5xl">
+        <h1 className={`mt-4 max-w-3xl text-balance text-3xl font-semibold leading-tight tracking-tight ${compact ? 'sm:text-4xl' : 'sm:text-5xl'}`}>
           {title}
         </h1>
         {description ? (
