@@ -58,6 +58,8 @@ export type HeroSlide = {
   tabLabel: string
   image: string
   mobilePosition: string
+  desktopContentLeft: string
+  desktopContentWidth: string
   align: 'left' | 'right'
   panel: boolean
 }

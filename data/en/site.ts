@@ -15,6 +15,8 @@ export const site = {
     'No. 21, Edong Industrial Park, Beiqiao Town, Xiangcheng District, Suzhou, Jiangsu, China',
   established: '30 July 2020',
   tagline: 'Precision-machined components, drawn to your specification.',
+  contactIntro:
+    'Founded in 2020, DEYA manufactures precision-machined components for liquid-cooling systems, semiconductor equipment, medical applications and humanoid robot assemblies. Send your drawing, material, quantity and inspection requirements for a project-specific review.',
 } as const
 
 export const nav = [

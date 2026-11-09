@@ -20,11 +20,15 @@ const familyVisuals: Record<string, { src: string; alt: string }> = {
     src: '/images/products/sealing-flange.jpg',
     alt: 'Machined stainless steel vacuum sealing flanges',
   },
-  medical: {
+  'titanium-valve-core': {
     src: '/images/products/titanium-alloy-valve-core.jpg',
     alt: 'TC4 titanium alloy valve cores for medical applications',
   },
-  'automation-robotics': {
+  'dental-surgical-tray': {
+    src: '/images/products/dental-surgical-tray.jpg',
+    alt: 'TC4 titanium alloy dental surgical tray component',
+  },
+  'humanoid-robot-joint': {
     src: '/images/products/robot-joint-no-hand-ai.png',
     alt: 'Machined aluminium humanoid robot joint housing on a clean white background',
   },
@@ -39,7 +43,7 @@ export function ProductFamilies({ categories, products }: ProductFamiliesProps) 
             <SectionHeading
               eyebrow="Product families"
               title="Choose by application and geometry"
-              description="Four documented families, each listing material, size and minimum order quantity."
+              description="Five documented families, each listing material, size and minimum order quantity."
             />
           </div>
           <Link
@@ -51,7 +55,7 @@ export function ProductFamilies({ categories, products }: ProductFamiliesProps) 
           </Link>
         </Reveal>
 
-        <ul role="list" className="mt-12 grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
+        <ul role="list" className="mt-12 grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {categories.map((category, index) => {
             const inCategory = products.filter((p) => p.categorySlug === category.slug)
             const image = familyVisuals[category.slug] ?? inCategory.find((p) => p.gallery.length > 0)?.gallery[0]

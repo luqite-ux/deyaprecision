@@ -71,7 +71,6 @@ export function HeroCarousel({ slides, headlineTypography = {} }: { slides: Hero
       >
         {slides.map((slide, index) => {
           const isActive = index === active
-          const right = slide.align === 'right'
           const typography=headlineTypography[slide.id]
           const headlineStyle:HeadlineStyle={
             ...(typography?.fontFamily==='site-sans'?{fontFamily:'var(--font-sans)'}:{}),
@@ -107,9 +106,12 @@ export function HeroCarousel({ slides, headlineTypography = {} }: { slides: Hero
 
               <div className="px-5 pb-8 pt-7 sm:px-8 lg:pointer-events-none lg:absolute lg:inset-0 lg:p-0">
                 <div
+                  style={{
+                    '--desktop-content-left': slide.desktopContentLeft,
+                    '--desktop-content-width': slide.desktopContentWidth,
+                  } as React.CSSProperties}
                   className={cn(
-                    'mx-auto max-w-xl lg:pointer-events-auto lg:absolute lg:top-1/2 lg:mx-0 lg:max-w-none lg:-translate-y-1/2',
-                    right ? 'lg:left-[57%] lg:w-[37%]' : 'lg:left-[6%] lg:w-[38%]',
+                    'mx-auto max-w-xl lg:pointer-events-auto lg:absolute lg:left-[var(--desktop-content-left)] lg:top-1/2 lg:mx-0 lg:w-[var(--desktop-content-width)] lg:max-w-none lg:-translate-y-1/2',
                     slide.panel &&
                       'lg:border-l-2 lg:border-signal lg:bg-navy-deep/85 lg:p-6 xl:p-8',
                   )}

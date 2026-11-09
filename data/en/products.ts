@@ -18,19 +18,27 @@ export const categories: ProductCategory[] = [
     icon: 'Cpu',
   },
   {
-    slug: 'medical',
-    name: 'Medical Titanium Components',
-    short: 'TC4 titanium parts',
+    slug: 'titanium-valve-core',
+    name: 'Titanium Alloy Valve Core',
+    short: 'TC4 titanium valve core',
     description:
-      'TC4 titanium alloy components for medical applications, including valve cores and dental surgical parts.',
+      'A TC4 titanium alloy valve core for medical applications, documented at 17 × 17 × 35 mm.',
     icon: 'HeartPulse',
   },
   {
-    slug: 'automation-robotics',
-    name: 'Non-Standard Automation',
-    short: 'Robot and motion parts',
+    slug: 'dental-surgical-tray',
+    name: 'Dental Surgical Tray',
+    short: 'TC4 titanium dental component',
     description:
-      'Aluminium structural and joint components for non-standard automation and humanoid robot assemblies.',
+      'A TC4 titanium alloy dental surgical tray or component, documented at 80 × 12 × 130 mm.',
+    icon: 'Layers',
+  },
+  {
+    slug: 'humanoid-robot-joint',
+    name: 'Humanoid Robot Joint',
+    short: 'Aluminium robot joint component',
+    description:
+      'An aluminium joint component for humanoid robot assemblies, documented at 90 × 90 × 220 mm.',
     icon: 'Bot',
   },
 ]
@@ -159,7 +167,7 @@ export const products: Product[] = [
   {
     slug: 'titanium-alloy-valve-core',
     name: 'Titanium Alloy Valve Core',
-    categorySlug: 'medical',
+    categorySlug: 'titanium-valve-core',
     summary: 'TC4 titanium valve core, 17 × 17 × 35 mm.',
     overview:
       'A TC4 titanium alloy valve core in natural finish, documented at 17 × 17 × 35 mm for medical applications. Thread, port and surface requirements follow your drawing.',
@@ -182,7 +190,7 @@ export const products: Product[] = [
   {
     slug: 'dental-surgical-tray',
     name: 'Dental Surgical Tray / Component',
-    categorySlug: 'medical',
+    categorySlug: 'dental-surgical-tray',
     summary: 'TC4 titanium dental surgical component, 80 × 12 × 130 mm.',
     overview:
       'A TC4 titanium alloy dental surgical tray or component in natural finish, documented at 80 × 12 × 130 mm. Geometry, surface condition and any handling requirements should be defined on your drawing.',
@@ -205,7 +213,7 @@ export const products: Product[] = [
   {
     slug: 'humanoid-robot-joint-component',
     name: 'Humanoid Robot Joint Component',
-    categorySlug: 'automation-robotics',
+    categorySlug: 'humanoid-robot-joint',
     summary: 'Natural aluminium joint component, 90 × 90 × 220 mm.',
     overview:
       'A machined aluminium joint component in natural finish, documented at 90 × 90 × 220 mm for humanoid robot assemblies. Bearing seats, bolt patterns and fit tolerances follow your drawing.',
